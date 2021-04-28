@@ -48,7 +48,7 @@ Symptoms of account restrictions include: 1) Fly-out (offers) window is missing/
 
 ![JSON reference for 2 instances.](https://i.postimg.cc/43XQmDqg/JSON-ref.png)
 
-The above images shows how the instances will be created if using 2 ASIN's per instance with the default JSON file. The amount of reserves determines how many instances will be created. I setup the default JSON with the idea of creating 5 instances using 2 ASIN's each. You can see from the picture how the reserve price and asins are linked.
+The above images shows how the instances will be created if using 2 ASIN's per instance if you use 10 ASIN's and 5 reserve prices (2 instances per asin). The amount of reserves determines how many instances will be created. You can see from the picture how the reserve price and asins are linked.
 
 Setting up the JSON is pretty self explanatory. Put in all the ASIN's you want your instances to check, and setup the reserve prices accordingly. When setting up the JSON it might be helpful to go in with a plan...For example if you want to check 30 ASIN's using 2 ASIN's per instance, you will need to have 15 reserve prices in the `reserves` list.
 

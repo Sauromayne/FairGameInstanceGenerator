@@ -39,13 +39,15 @@ Symptoms of account restrictions include: 1) Fly-out (offers) window is missing/
  Also, in order to make mass installation of your instances easier rename `__INSTALL (RUN FIRST).bat` to `INSTALL.bat` and remove the first `pause` in the batch file.
  
  3. Now that you have a fully configured and working FairGame reference folder name it `fairgame` for master branch, or `fairgame-dev` for dev branch **(DEV BRANCH TO BE ADDED SOON)**. Place the reference folder in the ROOT directory of this project:
- ![Root directory with reference folder](https://lh3.googleusercontent.com/EYiTosS2ii7ihzwOwmtp_QhE9dy1cIq-ylO5_yPyATWWounMuNPb5fgnag0oqpriLZYCXo7LPnHgAnZzw56Xzo1pxt97kEWKcmNDCS_lR9XaxSIp2Eh8nS2avgm3c7s4q7JpWi_zXshpE173dnt8YlrNb2Ot3ApOSb6qKOj_IByrUr4yxhFuGNchqRcmCNYueoctoxj_duiuNNcS8ntgksSMyIlIHQlzg8UNQf-xOPwl_D6rXHsJDWkrkfj_uZim3LrAbGz-RuOPGfCrs2o6KnM8bw7tPVsMUz4Y16lDHCHmEZTSRL_M6Sja4oTdj6ZdCE8fVVhuoQcSkSoHcqyHOFUCKUb7SM7gOuofjb2KkRcJFdFEyarQbHGfzwUgw7Fcx281B3z8VFY8EdfwtjMHwFzHAm5mx1k1q7Y_cw1nJDiR2yTbIaOdxr2x6wo1L9o_hhJI5uet2-_0RJxs29hX_qXzCCxVzbxhtt9vnSM0sfvouOZ2HmLw6CClqeFJipd49b4Rc4-TXGwh91YSjUGU1c86AUPxTM5qLlInO45R3hcj_DPRJdfGLsaUSIUAy7qMvW3q8ABoreXdgclGSRgPc5v0oznbYgki9K11FhQex4bTUesmWSh00eNoQjUsxc6L9qguAptAIdWu1J9DZIkLKUr11E5iinla5lLXC-50mM1YVPDToBGq0o4tg80w2IJDYmhxqofT7PyrGG7NwLqpBQlC=w619-h177-no?authuser=0)
+ 
+![Root directory with reference folder](https://lh3.googleusercontent.com/EYiTosS2ii7ihzwOwmtp_QhE9dy1cIq-ylO5_yPyATWWounMuNPb5fgnag0oqpriLZYCXo7LPnHgAnZzw56Xzo1pxt97kEWKcmNDCS_lR9XaxSIp2Eh8nS2avgm3c7s4q7JpWi_zXshpE173dnt8YlrNb2Ot3ApOSb6qKOj_IByrUr4yxhFuGNchqRcmCNYueoctoxj_duiuNNcS8ntgksSMyIlIHQlzg8UNQf-xOPwl_D6rXHsJDWkrkfj_uZim3LrAbGz-RuOPGfCrs2o6KnM8bw7tPVsMUz4Y16lDHCHmEZTSRL_M6Sja4oTdj6ZdCE8fVVhuoQcSkSoHcqyHOFUCKUb7SM7gOuofjb2KkRcJFdFEyarQbHGfzwUgw7Fcx281B3z8VFY8EdfwtjMHwFzHAm5mx1k1q7Y_cw1nJDiR2yTbIaOdxr2x6wo1L9o_hhJI5uet2-_0RJxs29hX_qXzCCxVzbxhtt9vnSM0sfvouOZ2HmLw6CClqeFJipd49b4Rc4-TXGwh91YSjUGU1c86AUPxTM5qLlInO45R3hcj_DPRJdfGLsaUSIUAy7qMvW3q8ABoreXdgclGSRgPc5v0oznbYgki9K11FhQex4bTUesmWSh00eNoQjUsxc6L9qguAptAIdWu1J9DZIkLKUr11E5iinla5lLXC-50mM1YVPDToBGq0o4tg80w2IJDYmhxqofT7PyrGG7NwLqpBQlC=w619-h177-no?authuser=0)
 
 4. Now we will configure the JSON file which is located in the `config` directory. Right click and edit either the master.json or dev.json files (Dev branch support will be added soon)
 
 **MASTER BRANCH JSON CONFIGURATION**
 
 ![JSON reference for 2 instances.](https://i.postimg.cc/43XQmDqg/JSON-ref.png)
+
 The above images shows how the instances will be created if using 2 ASIN's per instance with the default JSON file. The amount of reserves determines how many instances will be created. I setup the default JSON with the idea of creating 5 instances using 2 ASIN's each. You can see from the picture how the reserve price and asins are linked.
 
 Setting up the JSON is pretty self explanatory. Put in all the ASIN's you want your instances to check, and setup the reserve prices accordingly. When setting up the JSON it might be helpful to go in with a plan...For example if you want to check 30 ASIN's using 2 ASIN's per instance, you will need to have 15 reserve prices in the `reserves` list.

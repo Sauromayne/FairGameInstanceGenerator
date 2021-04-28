@@ -1,0 +1,19 @@
+{
+   "asins": ["B08KWLMZV4", "B08M13DXSZ", "B08LW46GH2"],
+   "reserves": ["650:750", "700:800", "600:700"],
+   "domain": "smile.amazon.com",
+   "condition": "New",
+   "merchant_id": "Any",
+   "proxies":false,
+   "ip_auth":false,
+   "socks5":false,
+   "socks5h":false,
+   "user":"username",
+   "pass":"password",
+   "ip_port":[
+      {
+         "http":"XXX.XXX.XXX.XXX:XXXX",
+         "https":"XXX.XXX.XXX.XXX:XXXX"
+      }
+   ]
+}

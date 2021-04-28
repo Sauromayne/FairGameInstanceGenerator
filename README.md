@@ -1,4 +1,4 @@
-# About FairGame Instance Creator
+# About FairGame Instance Generator
 I created this program in order to make creating multiple instances of FairGame easier. I was tired of copying multiple config files and folders. With FairGame Instance Creator you can easily create multiple instances from a single JSON file. I hope that by publishing this on GitHub, others will be able to enjoy its benefits. Please read through this document in order to learn how to properly setup your JSON file and utilize the program.
 
 This program was developed and tested using Windows 10, I do not know if it works on other operating systems. If the OS supports Python then it should work but I have no way to test it personally.

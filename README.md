@@ -36,7 +36,7 @@ Symptoms of account restrictions include: 1) Fly-out (offers) window is missing/
 
  1. Download your desired branch of [FairGame](https://github.com/Hari-Nagarajan/fairgame) to use as a reference for your instances.
  
- 2. Configure your reference folder like you normally would. Add any flags you want to use to the `_Amazon.bat` file in your reference folder so that it gets copied to all instances. **Read the FairGame readme, do not ask me how to configure FairGame. If you don't already know how, then maybe multiple instances is not for you.** It is highly recommended that you set up at least 1 config file so that you can fully install and configure your reference folder. Login to account, activate 1 click settings, etc. 
+ 2. Configure your reference folder like you normally would. Add any flags you want to use to the `_Amazon.bat` file in your reference folder so that it gets copied to all instances. For dev branch you will need to add any flags to the `_Amazonrequests.bat` file. **Read the FairGame readme, do not ask me how to configure FairGame. If you don't already know how, then maybe multiple instances is not for you. It is highly recommended that you set up at least 1 config file so that you can fully install and configure your reference folder. Login to account, activate 1 click settings, etc.**
  
  Also, in order to make mass installation of your instances easier rename `__INSTALL (RUN FIRST).bat` to `INSTALL.bat` and remove the first `pause` in the batch file.
  
@@ -54,18 +54,6 @@ The above images shows how the instances will be created if using 2 ASIN's per i
 
 Setting up the JSON is pretty self explanatory. Put in all the ASIN's you want your instances to check, and setup the reserve prices accordingly. When setting up the JSON it might be helpful to go in with a plan...For example if you want to check 30 ASIN's using 2 ASIN's per instance, you will need to have 15 reserve prices in the `reserves` list.
 
-1. Now that your reference folder and JSON files are properly configured, you are ready to run the program: 
-	
-
- - Run the `create_instances.bat` file in your ROOT directory. 	
- - Enter a name for your instances (This is what the folder for your instances will be called).
- - Enter how many ASIN's you want each instance to have, remembering how many asins you entered and how many reserve prices you entered.
-
-Here is a picture showing what a successful run of the program will look like:
-![Successful output. ](https://i.postimg.cc/KvHnZKrt/image.png)
-
-2. Navigate to your new instance directory and you will see a `mass_install.bat` and `start_all.bat` file in your directory. Run  `mass_install.bat` to install all instances, run  `start_all.bat` to start all instances.
-3. Congratulations you have successfully used this program to create multiple instances of FairGame!
 
 ## Dev Branch JSON Configuration
 
@@ -98,3 +86,17 @@ Any of these condition variables can be used for condition. If you use `Used` th
 - Copy the dictionaries and fill in a different IP:PORT to add more proxies. The default JSON is setup to allow 2 proxies.
 
 Make sure that you have enough proxies to support your instances if you are going to be running multiple instances of dev, it uses requests rather than selenium and running many instances without proxies will have a HIGH CHANCE OF GETTING SOFTBANS. Also, keep in mind that proxies are not foolproof and you could still get softbans regardless of proxies.
+
+### Running the program
+1. Now that your reference folder and JSON files are properly configured, you are ready to run the program: 
+	
+ - Run the `create_instances.bat` file in your ROOT directory. 	
+ - Enter a name for your instances (This is what the folder for your instances will be called).
+ - Enter how many ASIN's you want each instance to have, remembering how many asins you entered and how many reserve prices you entered.
+
+Here is a picture showing what a successful run of the program will look like:
+![Successful output. ](https://i.postimg.cc/KvHnZKrt/image.png)
+
+2. Navigate to your new instance directory and you will see a `mass_install.bat` and `start_all.bat` file in your directory. Run  `mass_install.bat` to install all instances, run  `start_all.bat` to start all instances. These can take time to process if you have a lot of instances so be patient. If you did not rename  `__INSTALL (RUN FIRST).bat` to `INSTALL.bat` the `mass_install.bat` file will not work, so either start again or manually install all the instances.
+
+3. Congratulations you have successfully used this program to create multiple instances of FairGame! :)

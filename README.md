@@ -73,6 +73,8 @@ Here is a picture showing what a successful run of the program will look like:
 
 **Make sure you either delete or rename `master.json` if you want to run the dev branch. If both JSONS are present the program will default to master branch**
 
+**If you are not using proxies (which I don't recommend), you can leave all the proxy data at their default values in the default JSON**
+
 The above image represents a `dev.json` file configured for 30 ASIN's using 15 reserve prices. This means that I want 2 ASIN's per instance (30 / 2 = 15 instance). I would not recommend anyone to use this many instances unless you are also using proxies. Note that proxies is `true` (lowercase) which means that I have enabled proxies. More on proxies below..
 
 ### Merchant ID

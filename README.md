@@ -78,9 +78,9 @@ Here is a picture showing what a successful run of the program will look like:
 The above image represents a `dev.json` file configured for 30 ASIN's using 15 reserve prices. This means that I want 2 ASIN's per instance (30 / 2 = 15 instance). I would not recommend anyone to use this many instances unless you are also using proxies. Note that proxies is `true` (lowercase) which means that I have enabled proxies. More on proxies below..
 
 ### Merchant ID
-![Merchant ID List](https://i.postimg.cc/xC038yLx/image.png)
 
-Merchant ID can be filled in with `any` or with any of the values in the above image.
+- Use `amazon` to buy only from Amazon
+- Use `all` to buy from any merchant on Amazon (Potential scam offers)
 
 ### Condition
 ![Condition List](https://i.postimg.cc/1zRK5rGW/image.png)

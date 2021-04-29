@@ -79,8 +79,8 @@ The above image represents a `dev.json` file configured for 30 ASIN's using 15 r
 
 ### Merchant ID
 
-- Use `amazon` to buy only from Amazon
-- Use `all` to buy from any merchant on Amazon (Potential scam offers)
+- Use `"amazon"` to buy only from Amazon
+- Use `"all"` to buy from any merchant on Amazon (Potential scam offers)
 
 ### Condition
 ![Condition List](https://i.postimg.cc/1zRK5rGW/image.png)

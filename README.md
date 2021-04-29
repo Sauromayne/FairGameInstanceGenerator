@@ -13,13 +13,15 @@ This program was developed and tested using Windows 10, I do not know if it work
 - The current version can only create instances that use one `asin_list`
 - The current version can only create instances that use one `amazon_website` domain
 
-**Currently only supports master branch but dev branch will be added very soon!**
-
 These features are not useful for me so I have not implemented them yet. 
 
 In regards to multiple `asin_list`'s, I do not see the need to use more than 2-3 ASIN's per instances and you can easily find 2-3 ASIN's within the same price range. 
 
 In regards to multiple `amazon website` domains, I just do not have a need for this but might implement in the future if there is enough demand. As of right now I feel adding these features would only complicate the JSON more than it needs to be.
+
+## Known errors
+![Permission error](https://i.postimg.cc/XqgzzY4q/error.png)
+- Permission error: Make sure that there are no chrome processes running in task manager. Kill them if there are and try to make the instances again. This can be avoided by always killing your instance with ctrl + c when setting up the reference folder.
 
 ### Disclaimer
 *I will copy and paste the disclaimer located in the FairGame read me. Increasing the amount of instances only further increases the chance of the following:*
@@ -44,7 +46,7 @@ Symptoms of account restrictions include: 1) Fly-out (offers) window is missing/
 
 4. Now we will configure the JSON file which is located in the `config` directory. Right click and edit either the master.json or dev.json files (Dev branch support will be added soon)
 
-**MASTER BRANCH JSON CONFIGURATION**
+## Master Branch JSON Configuration
 
 ![JSON reference for 2 instances.](https://i.postimg.cc/43XQmDqg/JSON-ref.png)
 
@@ -52,20 +54,45 @@ The above images shows how the instances will be created if using 2 ASIN's per i
 
 Setting up the JSON is pretty self explanatory. Put in all the ASIN's you want your instances to check, and setup the reserve prices accordingly. When setting up the JSON it might be helpful to go in with a plan...For example if you want to check 30 ASIN's using 2 ASIN's per instance, you will need to have 15 reserve prices in the `reserves` list.
 
-5. Now that your reference folder and JSON files are properly configured, you are ready to run the program: 
-
+1. Now that your reference folder and JSON files are properly configured, you are ready to run the program: 
 	
 
  - Run the `create_instances.bat` file in your ROOT directory. 	
  - Enter a name for your instances (This is what the folder for your instances will be called).
- - Enter how many ASIN's you want each instance to have.
+ - Enter how many ASIN's you want each instance to have, remembering how many asins you entered and how many reserve prices you entered.
 
 Here is a picture showing what a successful run of the program will look like:
 ![Successful output. ](https://i.postimg.cc/KvHnZKrt/image.png)
 
-6. Navigate to your new instance directory and you will see a `mass_install.bat` and `start_all.bat` file in your directory. Run  `mass_install.bat` to install all instances, run  `start_all.bat` to start all instances.
-7. Congratulations you have successfully used this program to create multiple instances of FairGame!
+2. Navigate to your new instance directory and you will see a `mass_install.bat` and `start_all.bat` file in your directory. Run  `mass_install.bat` to install all instances, run  `start_all.bat` to start all instances.
+3. Congratulations you have successfully used this program to create multiple instances of FairGame!
 
-**DEV BRANCH JSON CONFIGURATION**
+## Dev Branch JSON Configuration
 
-To be added soon!
+![30 ASIN JSON](https://i.postimg.cc/7hSHR7W4/requests-json.jpg)
+
+**Make sure you either delete or rename `master.json` if you want to run the dev branch. If both JSONS are present the program will default to master branch**
+
+The above image represents a `dev.json` file configured for 30 ASIN's using 15 reserve prices. This means that I want 2 ASIN's per instance (30 / 2 = 15 instance). I would not recommend anyone to use this many instances unless you are also using proxies. Note that proxies is `true` (lowercase) which means that I have enabled proxies. More on proxies below..
+
+### Merchant ID
+![Merchant ID List](https://i.postimg.cc/xC038yLx/image.png)
+
+Merchant ID can be filled in with `any` or with any of the values in the above image.
+
+### Condition
+![Condition List](https://i.postimg.cc/1zRK5rGW/image.png)
+
+Any of these condition variables can be used for condition. If you use `Used` the bot will try to buy any items that are within your price range with the condition marked as Used or anything above it.
+
+## Proxy JSON Configuration
+![Proxies Config](https://i.postimg.cc/RFB4Hq0b/image.png)
+
+- To enable proxies change `'"proxies":false` to `"proxies":true`
+- Change any of the other flags to true (lowercase) if your proxies use ip auth or SOCKS5
+- Change the user and pass strings to the username and password for your proxies.
+- Enter the IP:PORT where you see `"XXX.XXX.XXX.XXX:XXXX"`
+- Each dictionary contains two keys (http and https), enter the same IP:PORT for both keys. So each proxy should have 2 keys.
+- Copy the dictionaries and fill in a different IP:PORT to add more proxies. The default JSON is setup to allow 2 proxies.
+
+Make sure that you have enough proxies to support your instances if you are going to be running multiple instances of dev, it uses requests rather than selenium and running many instances without proxies will have a HIGH CHANCE OF GETTING SOFTBANS. Also, keep in mind that proxies are not foolproof and you could still get softbans regardless of proxies.

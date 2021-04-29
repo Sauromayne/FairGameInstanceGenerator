@@ -32,7 +32,7 @@ Account restrictions may be triggered by any of the following: 1) running multip
 
 Symptoms of account restrictions include: 1) Fly-out (offers) window is missing/completely blank, even if there are listings for the ASIN, 2) frequent CAPTCHA checks, 3) inability to access the My Account page, add items to your cart, or complete purchases; usually displayed as a 503 error (Amazon Dogs & “SORRY we couldn’t find that page” message). You’ll likely have to sit-out a few days of drops to resolve the throttle.
 
-# HOW TO:
+# Quick Start:
 
  1. Download your desired branch of [FairGame](https://github.com/Hari-Nagarajan/fairgame) to use as a reference for your instances.
  
@@ -87,7 +87,7 @@ Any of these condition variables can be used for condition. If you use `Used` th
 
 Make sure that you have enough proxies to support your instances if you are going to be running multiple instances of dev, it uses requests rather than selenium and running many instances without proxies will have a HIGH CHANCE OF GETTING SOFTBANS. Also, keep in mind that proxies are not foolproof and you could still get softbans regardless of proxies.
 
-### Running the program
+# Running the program
 1. Now that your reference folder and JSON files are properly configured, you are ready to run the program: 
 	
  - Run the `create_instances.bat` file in your ROOT directory. 	

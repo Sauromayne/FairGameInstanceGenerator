@@ -34,17 +34,25 @@ Symptoms of account restrictions include: 1) Fly-out (offers) window is missing/
 
 # Quick Start:
 
- 1. Download your desired branch of [FairGame](https://github.com/Hari-Nagarajan/fairgame) to use as a reference for your instances.
+ **Download your desired branch of [FairGame](https://github.com/Hari-Nagarajan/fairgame) to use as a reference for your instances.**
  
- 2. Configure your reference folder like you normally would. Add any flags you want to use to the `_Amazon.bat` file in your reference folder so that it gets copied to all instances. For dev branch you will need to add any flags to the `_Amazonrequests.bat` file. **Read the FairGame readme, do not ask me how to configure FairGame. If you don't already know how, then maybe multiple instances is not for you. It is highly recommended that you set up at least 1 config file so that you can fully install and configure your reference folder. Login to account, activate 1 click settings, etc.**
+  - [Master Branch](https://github.com/Hari-Nagarajan/fairgame): Uses selenium and buy now checkout flow to attempt purchases on Amazon.
+  - [Dev Branch](https://github.com/Hari-Nagarajan/fairgame/tree/development): Uses requests through Python to check stock and attempts to utilize turbo checkout when it finds stock
+  - [Alpha Branch](https://github.com/Hari-Nagarajan/fairgame/tree/alpha): Uses asyncio through Python to check all ASINs simultaneously (Thus only needing one instance). 1 proxy is assigned to 1 ASIN. So if you have 10 ASINs but only 5 proxies, then 5 ASIN's will be running on your home IP.
+
+Click any of the above links and then click "Code" ---> "Download Zip"; you can then extract this folder into the root directory of this project and rename accordingly.
+ 
+ 1. **For alpha branch you can likely skip this step since we are only creating one instance!** Configure your reference folder like you normally would. Add any flags you want to use to the `_Amazon.bat` file in your reference folder so that it gets copied to all instances. For dev branch you will need to add any flags to the `_Amazonrequests.bat` file. **Read the FairGame readme, do not ask me how to configure FairGame. If you don't already know how, then maybe multiple instances is not for you. It is highly recommended that you set up at least 1 config file so that you can fully install and configure your reference folder. Login to account, activate 1 click settings, etc.**
  
  Also, in order to make mass installation of your instances easier rename `__INSTALL (RUN FIRST).bat` to `INSTALL.bat` and remove the first `pause` in the batch file.
  
- 3. Now that you have a fully configured and working FairGame reference folder name it `fairgame` for master branch, or `fairgame-dev` for dev branch. Place the reference folder in the ROOT directory of this project:
+ 2. Now that you have a fully configured and working FairGame reference folder name it `fairgame` for master branch, `fairgame-dev` for dev branch, or `fairgame-alpha` for alpha branch. Place the reference folder in the ROOT directory of this project:
  
 ![Root directory with reference folder](https://i.postimg.cc/yxh7ybnK/image.png)
 
-4. Now we will configure the JSON file which is located in the `config` directory. Right click and edit either the master.json or dev.json files.
+3. Now we will configure the JSON file which is located in the `config` directory. Alpha jsons can be found within the `alpha` directory which you will find in the `config` directory. Rename whichever json you will be using by changing the file extension from `.json_template` to `.json`. **IF YOU ARE USING ALPHA BRANCH YOU MUST HAVE BOTH A `alpha.json` AND `proxies.json` FILE. IT CANNOT BE RUN WITHOUT PROXIES USING THIS PROGRAM**
+
+4. Check the JSON Configuration sections below for your desired branch, configure your jsons, and then you are ready to run the program! 
 
 ## Master Branch JSON Configuration
 
@@ -86,6 +94,15 @@ Any of these condition variables can be used for condition. If you use `Used` th
 - Copy the dictionaries and fill in a different IP:PORT to add more proxies. The default JSON is setup to allow 2 proxies.
 
 Make sure that you have enough proxies to support your instances if you are going to be running multiple instances of dev, it uses requests rather than selenium and running many instances without proxies will have a HIGH CHANCE OF GETTING SOFTBANS. Also, keep in mind that proxies are not foolproof and you could still get softbans regardless of proxies.
+
+## Alpha Branch JSON Configuration
+![Alpha JSON](https://i.postimg.cc/0j9JzpQN/image.png)
+
+Each dictionary in the "items" list contains a value for "asins", "min-price", "max-price", "condition", and "merchant_id". You can create multiple dictionaries like the above image in order to use seperate values per asin, or you can place them all into one dictionary. **smile.amazon.com is the only working domain on alpha branch at the moment**
+
+Condition and merchant_id values can be entered the same as they are described in the dev.json configuration instructions above. Proxies also use the same concept as above, the only difference is that proxies.json is its own file while using dev branch and there is no need to enable it with "true" as it is enabled by default.
+
+Just remember that each ASIN is only assigned one proxy, so if you are going to have a large amount of ASIN's it is a good idea to also have a large amount of proxies. As a reference, I am only able to run 3 ASIN's on my home IP without getting softbans so I run 13 ASIN's with 10 proxies.
 
 # Running the program
 1. Now that your reference folder and JSON files are properly configured, you are ready to run the program: 

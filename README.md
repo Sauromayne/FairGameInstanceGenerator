@@ -114,6 +114,6 @@ Just remember that each ASIN is only assigned one proxy, so if you are going to 
 Here is a picture showing what a successful run of the program will look like:
 ![Successful output. ](https://i.postimg.cc/KvHnZKrt/image.png)
 
-2. Navigate to your new instance directory and you will see a `mass_install.bat` and `start_all.bat` file in your directory. Run  `mass_install.bat` to install all instances, run  `start_all.bat` to start all instances. These can take time to process if you have a lot of instances so be patient. If you did not rename  `__INSTALL (RUN FIRST).bat` to `INSTALL.bat` the `mass_install.bat` file will not work, so either start again or manually install all the instances.
+2. **(For alpha branch you will need to manually run the INSTALL.bat as advised in the terminal when you create your alpha instance)** Navigate to your new instance directory and you will see a `mass_install.bat` and `start_all.bat` file in your directory. Run  `mass_install.bat` to install all instances, run  `start_all.bat` to start all instances. These can take time to process if you have a lot of instances so be patient. If you did not rename  `__INSTALL (RUN FIRST).bat` to `INSTALL.bat` the `mass_install.bat` file will not work, so either start again or manually install all the instances.
 
 3. Congratulations you have successfully used this program to create multiple instances of FairGame! :)

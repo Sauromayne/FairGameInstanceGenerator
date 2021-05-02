@@ -3,7 +3,7 @@
    "reserves": ["650:750", "700:800"],
    "domain": "smile.amazon.com",
    "condition": "New",
-   "merchant_id": "any",
+   "merchant_id": "amazon",
    "proxies":false,
    "ip_auth":false,
    "socks5":false,

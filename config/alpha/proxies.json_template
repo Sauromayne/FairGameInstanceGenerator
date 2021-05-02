@@ -1,0 +1,17 @@
+{
+       "ip_auth":false,
+       "socks5":false,
+       "socks5h":false,
+       "user":"username",
+       "pass":"password",
+       "ip_port":[
+          {
+             "http":"XXX.XXX.XXX.XXX:XXXX",
+             "https":"XXX.XXX.XXX.XXX:XXXX"
+          },
+          {
+             "http":"XXX.XXX.XXX.XXX:XXXX",
+             "https":"XXX.XXX.XXX.XXX:XXXX"
+          }
+       ]
+}
